@@ -88,6 +88,14 @@ body {
   background-color: var(--clr-primary-pale-blue);
   margin: 1.25rem;
   font-weight: var(--fw-500);
+  background-image: url(/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+@media (max-width: 400px) {
+  body {
+    background-image: url(/images/pattern-background-mobile.svg);
+  }
 }
 
 h1,
