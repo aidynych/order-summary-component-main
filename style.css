@@ -1,0 +1,180 @@
+:root {
+  --ff-read-hat-display: "Red Hat Display", sans-serif;
+
+  --fw-500: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+
+  --fs-400: 1rem;
+
+  --clr-primary-pale-blue: hsl(225, 100%, 94%);
+  --clr-primary-bright-blue: hsl(245, 75%, 52%);
+
+  --clr-very-pale-blue: hsl(225, 100%, 98%);
+  --clr-desaturated-blue: hsl(224, 23%, 55%);
+  --clr-dark-blue: hsl(223, 47%, 23%);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-family: var(--ff-read-hat-display);
+  color: var(--clr-desaturated-blue);
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  font-size: var(--fs-400);
+  background-color: var(--clr-primary-pale-blue);
+  margin: 1.25rem;
+  font-weight: var(--fw-500);
+}
+
+h1,
+h3 {
+  color: var(--clr-dark-blue);
+}
+
+.flex-group {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flex-group[data-column="column"] {
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.flex-group[data-button="button"] {
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.container {
+  display: grid;
+  gap: 1.25rem;
+  background-color: white;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.order-summary {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem;
+  gap: 1rem;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-very-pale-blue);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.plan span {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-900);
+  color: var(--clr-dark-blue);
+}
+.plan a {
+  font-size: 0.8125rem;
+  font-weight: var(--fw-700);
+  color: var(--clr-primary-bright-blue);
+}
+.plan a:hover {
+  text-decoration: none;
+}
+
+.button {
+  border: 0;
+  color: white;
+  font-weight: var(--fw-900);
+  background-color: var(--clr-primary-bright-blue);
+  padding: 0.75rem 0;
+  border-radius: 0.5rem;
+  font-size: 0.8125rem;
+  width: 100%;
+  box-shadow: 0.5rem 1rem 3rem hsl(245, 75%, 52%, 0.3);
+  z-index: 2;
+  cursor: pointer;
+}
+.button:hover {
+  opacity: 0.8;
+}
+
+.secondary {
+  background-color: white;
+  color: var(--clr-desaturated-blue);
+  box-shadow: none;
+  padding: 0.5rem 0;
+  z-index: 1;
+}
+.secondary:hover {
+  color: var(--clr-dark-blue);
+}
